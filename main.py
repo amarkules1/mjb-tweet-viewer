@@ -1,7 +1,7 @@
 import json
 
 import cachetools
-from flask import Flask
+from flask import Flask, redirect
 import pandas as pd
 import sqlalchemy
 from sqlalchemy import sql
@@ -10,7 +10,7 @@ from flask_limiter.util import get_remote_address
 from flask_cors import CORS
 
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='mjb-tweet-frontend/dist', static_url_path='')
 limiter = Limiter(
     get_remote_address,
     app=app,
@@ -20,6 +20,11 @@ limiter = Limiter(
 CORS(app)
 
 secret_sauce = json.load(open('secret_sauce.json',))
+
+
+@app.route('/')
+def hello():
+    return redirect("/index.html", code=302)
 
 
 @app.route("/tweets", methods=['GET'])
