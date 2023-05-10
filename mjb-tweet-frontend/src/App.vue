@@ -1,15 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <img class="profilePic" alt="Profile Pic" src="./assets/profile.jpg">
+  <TweetComponent msg="You see where I am going with this? https:\/\/t.co\/2hyLeWoyWg" :date="1680825600000" />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TweetComponent from './components/Tweet.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TweetComponent
   }
 }
 </script>
@@ -22,5 +22,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+  
+}
+.profilePic {
+  height: 150px;
+  width: 150px;
+  border-radius: 75px;
 }
 </style>
