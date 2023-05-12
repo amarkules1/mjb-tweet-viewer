@@ -45,18 +45,53 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+/* The card itself */
+.tweetCard {
+  width: 500px;
+  margin: 15px auto;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  padding: 10px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
+
+/* Name and handle */
+.nameHolder, .handleHolder {
   display: inline-block;
-  margin: 0 10px;
 }
-a {
-  color: #42b983;
+
+.name {
+  font-weight: bold;
+  font-size: 15px;
+  color: #14171a;
+}
+
+.handle {
+  font-weight: normal;
+  font-size: 14px;
+  color: #657786;
+  margin-left: 5px;
+}
+
+/* Date */
+.dateHolder {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 14px;
+  color: #657786;
+}
+
+/* The text of the tweet */
+.textHolder {
+  margin-bottom: 10px;
+}
+
+.text {
+  font-size: 15px;
+  color: #14171a;
 }
 </style>
