@@ -1,15 +1,34 @@
 <template>
   <img class="profilePic" alt="Profile Pic" src="./assets/profile.jpg">
-  <TweetComponent msg="You see where I am going with this? https:\/\/t.co\/2hyLeWoyWg" :date="1680825600000" />
+  
+  <TweetComponent v-for="tweet in tweets" 
+      :key="tweet.id"
+      :msg="tweet.tweet_text"
+      :date="tweet.tweet_time" />
 </template>
 
 <script>
+import axios from 'axios';
 import TweetComponent from './components/Tweet.vue'
 
 export default {
   name: 'App',
   components: {
     TweetComponent
+  },
+  data() {
+    return {
+      tweets: []
+    }
+  },
+  created() {
+    axios.get('/tweets')
+      .then(response => {
+        this.tweets = response.data;
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 }
 </script>

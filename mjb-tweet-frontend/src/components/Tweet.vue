@@ -57,8 +57,9 @@ export default {
 }
 
 /* Name and handle */
-.nameHolder, .handleHolder {
+.nameHolder, .handleHolder, .dateHolder {
   display: inline-block;
+  margin:5px;
 }
 
 .name {
@@ -76,7 +77,6 @@ export default {
 
 /* Date */
 .dateHolder {
-  margin-top: 5px;
   margin-bottom: 10px;
 }
 
@@ -91,6 +91,7 @@ export default {
 }
 
 .text {
+  font-weight: normal;
   font-size: 15px;
   color: #14171a;
 }
