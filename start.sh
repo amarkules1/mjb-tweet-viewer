@@ -1,6 +1,6 @@
 #!/bin/bash
-app="mjbtweets"
+app="mjbtweets1"
 docker build -t ${app} .
-docker run -d -p 5000:80 \
+docker run -d -p 5001:5001 \
   --name=${app} \
   -v $PWD:/app ${app}
